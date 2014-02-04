@@ -1,0 +1,159 @@
+html {
+    background: url(../img/back.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
+    background-color:#3f6682;
+}
+
+header {
+    text-align:center;
+    margin-top:3em;
+}
+
+.container {
+    width:720px;
+    margin:0 auto;
+}
+
+.window {
+    background: url(../img/window.png) no-repeat;
+    width:707px;
+    height:499px;
+    margin:2em auto 0 auto;
+    position:relative;
+}
+
+.inner-window {
+    background: url(../img/themes/peacock.png) no-repeat;
+    width:667px;
+    height:387px;
+    position:absolute;
+    left:20px;
+    top:63px;
+}
+
+.download-anchor {
+    width:667px;
+    height:340px;
+    position:absolute;
+    left:20px;
+    top:63px;
+    z-index:9999;
+}
+
+.social {
+    width:660px;
+    margin:0 auto;
+    position:relative;
+}
+
+.github {
+    position:absolute;
+    left:130px;
+    top:-1px;
+}
+
+.download-link {
+    text-decoration:none;
+    color:#fff;
+    background-color:rgba(20,20,20,0.8);
+    padding:2em;
+    text-align:center;
+    -webkit-border-radius: 12em;
+    border-radius: 12em;
+    background-clip: padding-box;
+    position:absolute;
+    left:150px;
+    top:170px;
+    right:150px;
+    z-index:9999;
+    text-transform:uppercase;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    opacity:0;
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    transition: all .5s ease-out;
+}
+
+.download-link span {
+    display:block;
+    font-weight:normal;
+    font-style:italic;
+    text-transform:none;
+    font-size:0.9em;
+    margin-top:0.5em;
+    color:#aaa;
+    color:rgba(255,255,255,0.3);
+}
+
+.download-anchor:hover .download-link {
+    display:block;
+    top:130px;
+    opacity:1;
+}
+
+.theme-name {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#fff;
+    font-size:0.8em;
+    position:absolute;
+    left:30px;
+    top:41px;
+    text-shadow:0 1px 2px #111;
+}
+
+.social {
+    margin-bottom:2em;
+}
+
+/* Flex Slider */
+
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* Direction Nav */
+.flex-direction-nav {display:none;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: 20px; text-align: center;}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(255,255,255,0.2); cursor: pointer; text-indent: -9999px; -webkit-border-radius: 20px; -moz-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
+.flex-control-paging li a:hover { background: #fff; background: rgba(255,255,255,0.7); }
+.flex-control-paging li a.flex-active { background: #fff; background: rgba(255,255,255,0.9); cursor: default; }
+
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
