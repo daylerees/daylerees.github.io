@@ -38,6 +38,9 @@
     pre.hidden {
         display:none;
     }
+    pre.open.hidden {
+        display:block;
+    }
     </style>
 </head>
 <body>
@@ -3371,18 +3374,45 @@
 
 }
 </pre>
-    
+
     <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
     <script>
-    $('pre').bind('click', function() {
-        if ($(this).hasClass('open')) {
-            $(this).removeClass('open');
-            $(this).siblings().removeClass('hidden')
-        } else {
-            $(this).addClass('open');
-            $(this).siblings().addClass('hidden')
+    var $current;
+    var $panes = $('pre');
+    $panes.on('click', function() {
+        if ($current) return hidePanes();
+        $panes.addClass('hidden');
+        showPane($(this));
+    });
+    $(document).on('keydown', function(e) {
+        if (!$current) return;
+        var $target;
+        switch (e.keyCode) {
+            case 37: // Left
+                var $target = $current.prev('pre');
+                if ($target.length === 0) $target = $panes.last();
+                showPane($target);
+            break;
+            case 39: // Right
+                var $target = $current.next('pre');
+                if ($target.length === 0) $target = $panes.first();
+                showPane($target);
+            break;
+            case 27: // Escape
+                hidePanes();
+            break;
         }
     });
+    function showPane($target) {
+        if ($current) $current.removeClass('open');
+        $current = $target;
+        $current.addClass('open');
+    }
+    function hidePanes() {
+        $current.removeClass('open');
+        $current = void 0;
+        $panes.removeClass('hidden');
+    }
     </script>
 </body>
 </html>
